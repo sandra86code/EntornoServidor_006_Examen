@@ -16,7 +16,7 @@ public class CityControl {
 		return city;
 	}
 
-	public static boolean saveCity(City city) {
+	public static boolean saveCity(City city) throws DaoException {
 		boolean resultado = false;
 		Session session = ConnectionBD.getSession();
 
@@ -27,13 +27,13 @@ public class CityControl {
 			resultado = true;
 
 		} catch (Exception e) {
-			System.out.println(e);
-			// TODO: handle exception
+			throw new DaoException(e.getMessage());
 		}
 		return resultado;
 	}
 
-	public static boolean deleteCity(City city) {
+	
+	public static boolean deleteCity(City city) throws DaoException {
 		boolean resultado = false;
 		Session session = ConnectionBD.getSession();
 
@@ -44,8 +44,7 @@ public class CityControl {
 			resultado = true;
 
 		} catch (Exception e) {
-			System.out.println(e);
-			// TODO: handle exception
+			throw new DaoException(e.getMessage());
 		}
 		return resultado;
 	}

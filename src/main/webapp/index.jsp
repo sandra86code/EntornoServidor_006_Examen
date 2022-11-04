@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<% session.invalidate(); %>
 <form action="login.jsp"  method="post">
   <label for="fname">Usuario:</label><br>
   <input type="text" id="name" name="name" ><br>
